@@ -15,6 +15,7 @@ set(CMAKE_BUILD_TYPE "Debug")
 function(add_code name path)
     add_executable(${name} ${path})
     target_link_libraries(${name})
+    target_include_directories(${name} PUBLIC "src/")
     target_compile_definitions(${name} PRIVATE DEBUG=1)
 endfunction()
 
@@ -24,3 +25,15 @@ set(CMAKE_C_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_code(HelloWorld "src/HelloWorld.cpp")
+
+#add_code(InvertBinaryTree "src/tree/InvertBinaryTree.cpp")
+
+#add_code(BW94_Q1 "src/leetcode/biweekly/BW94_Q1.cpp")
+#add_code(BW94_Q2 "src/leetcode/biweekly/BW94_Q2.cpp")
+#add_code(BW94_Q3 "src/leetcode/biweekly/BW94_Q3.cpp")
+#add_code(BW94_Q4 "src/leetcode/biweekly/BW94_Q4.cpp")
+
+add_code(W325_Q1 "src/leetcode/weekly/W325_Q1.cpp")
+add_code(W325_Q2 "src/leetcode/weekly/W325_Q2.cpp")
+add_code(W325_Q3 "src/leetcode/weekly/W325_Q3.cpp")
+add_code(W325_Q4 "src/leetcode/weekly/W325_Q4.cpp")

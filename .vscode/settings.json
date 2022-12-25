@@ -5,6 +5,7 @@
     "ostream": "cpp",
     "regex": "cpp",
     "optional": "cpp",
-    "limits": "cpp"
+    "limits": "cpp",
+    "iterator": "cpp"
   }
 }

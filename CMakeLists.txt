@@ -33,7 +33,9 @@ add_code(HelloWorld "src/HelloWorld.cpp")
 #add_code(BW94_Q3 "src/leetcode/biweekly/BW94_Q3.cpp")
 #add_code(BW94_Q4 "src/leetcode/biweekly/BW94_Q4.cpp")
 
-add_code(W325_Q1 "src/leetcode/weekly/W325_Q1.cpp")
-add_code(W325_Q2 "src/leetcode/weekly/W325_Q2.cpp")
-add_code(W325_Q3 "src/leetcode/weekly/W325_Q3.cpp")
-add_code(W325_Q4 "src/leetcode/weekly/W325_Q4.cpp")
+#add_code(W325_Q1 "src/leetcode/weekly/W325_Q1.cpp")
+#add_code(W325_Q2 "src/leetcode/weekly/W325_Q2.cpp")
+#add_code(W325_Q3 "src/leetcode/weekly/W325_Q3.cpp")
+#add_code(W325_Q4 "src/leetcode/weekly/W325_Q4.cpp")
+
+add_code(TwoSum "src/patterns/TwoSum.cpp")

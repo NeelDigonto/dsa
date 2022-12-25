@@ -39,3 +39,4 @@ add_code(HelloWorld "src/HelloWorld.cpp")
 #add_code(W325_Q4 "src/leetcode/weekly/W325_Q4.cpp")
 
 add_code(TwoSum "src/patterns/TwoSum.cpp")
+add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")

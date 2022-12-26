@@ -6,7 +6,6 @@
     "regex": "cpp",
     "optional": "cpp",
     "limits": "cpp",
-    "iterator": "cpp",
-    "initializer_list": "cpp"
+    "iterator": "cpp"
   }
 }

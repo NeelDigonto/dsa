@@ -18,6 +18,8 @@ std::ostream& operator<<(std::ostream& os, ListNode* head) {
   }
 
   os << "]" << std::endl;
+
+  return os;
 }
 
 ListNode* GetList(std::initializer_list<int> l) {

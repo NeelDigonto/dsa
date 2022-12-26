@@ -40,3 +40,4 @@ add_code(HelloWorld "src/HelloWorld.cpp")
 
 add_code(TwoSum "src/patterns/TwoSum.cpp")
 add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
+add_code(MergeTwoSortedLists "src/patterns/MergeTwoSortedLists.cpp")

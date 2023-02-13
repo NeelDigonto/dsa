@@ -57,23 +57,38 @@
 using sz = std::size_t;
 
 template <typename T, typename U>
-std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
+std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &p) {
   os << "{ " << p.first << ", " << p.second << "}";
   return os;
 }
 
 template <typename T>
-std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
+std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
   os << "[ ";
-  for (auto it = v.cbegin(); it != v.cend(); ++it) os << *it << " ";
+  for (auto it = v.cbegin(); it != v.cend(); ++it)
+    os << *it << " ";
   os << "]";
   return os;
 }
 
 template <typename T>
-std::ostream& operator<<(std::ostream& os,
-                         const std::vector<std::vector<T>>& v) {
-  for (auto row = v.cbegin(); row != v.cend(); ++row) os << *row << std::endl;
+std::ostream &operator<<(std::ostream &os,
+                         const std::vector<std::optional<T>> &v) {
+  os << "[ ";
+  for (auto it = v.cbegin(); it != v.cend(); ++it)
+    if (it->has_value())
+      os << it->value() << " ";
+    else
+      os << "null ";
+  os << "]";
+  return os;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os,
+                         const std::vector<std::vector<T>> &v) {
+  for (auto row = v.cbegin(); row != v.cend(); ++row)
+    os << *row << std::endl;
   return os;
 }
 
@@ -86,20 +101,20 @@ std::ostringstream printLinearDS(FwdIt _first, FwdIt _last) {
   if (distance(_first, _last) == 1)
     oss << *_first;
   else {
-    for (auto it = _first; it != _last - 1; ++it) oss << *it << ", ";
+    for (auto it = _first; it != _last - 1; ++it)
+      oss << *it << ", ";
     oss << *prev(_last);
   }
 
   return oss;
 }
 
-template <typename C>
-std::ostringstream print(const C& _c) {
+template <typename C> std::ostringstream print(const C &_c) {
   return printLinearDS(_c.begin(), _c.end());
 }
 
 template <typename Func, typename... Args>
-void benchmark(const std::string& _test_name, Func _func, Args&&... _args) {
+void benchmark(const std::string &_test_name, Func _func, Args &&..._args) {
   auto start = std::chrono::high_resolution_clock::now();
 
   _func(std::forward<Args>(_args)...);
@@ -114,16 +129,17 @@ void benchmark(const std::string& _test_name, Func _func, Args&&... _args) {
 
 template <typename T>
 void forEach(T _iterable,
-             void (*_lambda)(const typename T::value_type&, std::size_t)) {
+             void (*_lambda)(const typename T::value_type &, std::size_t)) {
   typename T::const_iterator iterator = _iterable.begin();
   std::size_t index = 0;
 
-  while (iterator != _iterable.end()) _lambda(*iterator++, index++);
+  while (iterator != _iterable.end())
+    _lambda(*iterator++, index++);
 }
 
 template <typename T>
 [[nodiscard]] T map(T _iterable,
-                    auto(*_lambda)(const typename T::value_type&, std::size_t)
+                    auto(*_lambda)(const typename T::value_type &, std::size_t)
                         ->typename T::value_type) {
   typename T::const_iterator iterator = _iterable.begin();
 
@@ -136,4 +152,4 @@ template <typename T>
   return new_iterable;
 }
 
-}  // namespace util
+} // namespace util

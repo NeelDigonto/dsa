@@ -3,9 +3,9 @@
 using namespace std;
 
 class Solution {
- public:
-  vector<int> twoSum(const vector<int>& nums, int target) {
-    size_t n = nums.size();
+public:
+  vector<int> twoSum(const vector<int> &nums, int target) {
+    const size_t n = nums.size();
     unordered_map<int, typename vector<int>::const_iterator> cache;
     cache.reserve(n);
 

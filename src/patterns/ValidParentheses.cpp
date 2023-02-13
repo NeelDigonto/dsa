@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool isValid(const string s) {
     stack<typename string::value_type> set;
     for (const auto ch : s) {

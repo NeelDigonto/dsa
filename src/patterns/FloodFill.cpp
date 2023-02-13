@@ -1,19 +1,19 @@
 #include <iostream>
 
-#include "../core/Common.hpp"
+#include <core/Common.hpp>
 using namespace std;
 
 class Solution {
- public:
-  vector<vector<int>>* image;
+public:
+  vector<vector<int>> *image;
   size_t m, n;
-  int color;
+  int fill_color, area_color;
 
-  vector<vector<int>>& floodFill(vector<vector<int>>& image, int sr, int sc,
-                                 int color) {
+  vector<vector<int>> &floodFill(vector<vector<int>> &image, int sr, int sc, int color) {
     Solution::image = &image;
     m = image.size(), n = begin(image)->size();
-    Solution::color = color;
+    Solution::fill_color = color;
+    Solution::area_color = image[sr][sc];
 
     _floodFill(sr, sc);
 
@@ -21,16 +21,15 @@ class Solution {
   }
 
   void _floodFill(int sr, int sc) {
-    if (sr < 0 || sr >= m || sc < 0 || sc >= n || (*image)[sr][sc] == color)
+    if (sr < 0 || sr >= m || sc < 0 || sc >= n || (*image)[sr][sc] == fill_color || (*image)[sr][sc] != area_color)
       return;
 
-    const auto curr_val = (*image)[sr][sc];
-    (*image)[sr][sc] = color;
+    (*image)[sr][sc] = fill_color;
 
-    if ((*image)[sr - 1][sc] == curr_val) _floodFill(sr - 1, sc);  // up
-    if ((*image)[sr + 1][sc] == curr_val) _floodFill(sr + 1, sc);  // down
-    if ((*image)[sr][sc - 1] == curr_val) _floodFill(sr, sc - 1);  // left
-    if ((*image)[sr][sc + 1] == curr_val) _floodFill(sr, sc + 1);  // right
+    _floodFill(sr - 1, sc); // up
+    _floodFill(sr + 1, sc); // down
+    _floodFill(sr, sc - 1); // left
+    _floodFill(sr, sc + 1); // right
   }
 };
 

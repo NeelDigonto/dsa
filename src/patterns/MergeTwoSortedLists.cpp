@@ -5,16 +5,19 @@
 using namespace std;
 
 class Solution {
- private:
-  void Forward(ListNode*& node) { node = node->next; }
+private:
+  void Forward(ListNode *&node) { node = node->next; }
 
- public:
-  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-    if (!list1 && !list2) return list1;
-    if (list1 && !list2) return list1;
-    if (!list1 && list2) return list2;
+public:
+  ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
+    if (!list1 && !list2)
+      return list1;
+    if (list1 && !list2)
+      return list1;
+    if (!list1 && list2)
+      return list2;
 
-    ListNode* head = nullptr;
+    ListNode *head = nullptr;
 
     if (list1->val <= list2->val) {
       head = list1;
@@ -24,23 +27,23 @@ class Solution {
       Forward(list2);
     }
 
-    ListNode* merger = head;
+    ListNode *tail = head;
 
     while (list1 && list2) {
       if (list1->val <= list2->val) {
-        merger->next = list1;
+        tail->next = list1;
         Forward(list1);
       } else {
-        merger->next = list2;
+        tail->next = list2;
         Forward(list2);
       }
-      merger = merger->next;
+      Forward(tail);
     }
 
     if (list1)
-      merger->next = list1;
+      tail->next = list1;
     else if (list2)
-      merger->next = list2;
+      tail->next = list2;
 
     return head;
   }

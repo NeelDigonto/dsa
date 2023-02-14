@@ -11,7 +11,7 @@
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}",
         "-I",
-        "${workspaceFolder}/src/core/"
+        "${workspaceFolder}/src/"
       ],
       "options": {
         "cwd": "${fileDirname}"

@@ -7,12 +7,12 @@ public:
   vector<vector<int>> insert(const vector<vector<int>> &intervals, const vector<int> &newInterval) {
     vector<vector<int>> finalInterval;
     const auto rbs = upper_bound(begin(intervals), end(intervals), newInterval[0],
-                                 [](const auto lhs, const auto rhs) { lhs[0] < rhs[0] });
+                                 [](const auto lhs, const auto rhs) { return lhs[0] < rhs[0]; });
 
     finalInterval.insert(end(finalInterval), begin(intervals), rbs);
 
     const auto rbe = upper_bound(begin(intervals), end(intervals), newInterval[1],
-                                 [](const auto lhs, const auto rhs) { lhs[1] < rhs[1] });
+                                 [](const auto lhs, const auto rhs) { return lhs[1] < rhs[1]; });
   }
 };
 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.21)
 project(dsa)
 find_program(CCACHE_PROGRAM ccache)
 
@@ -54,4 +54,4 @@ add_code(BinarySearch "src/patterns/BinarySearch.cpp")
 add_code(FloodFill "src/patterns/FloodFill.cpp")
 add_code(MaximumSubarray "src/patterns/MaximumSubarray.cpp")
 add_code(LCA "src/patterns/LCA.cpp")
-add_code(InsertInterval "src/patterns/InsertInterval.cpp")
+#add_code(InsertInterval "src/patterns/InsertInterval.cpp")

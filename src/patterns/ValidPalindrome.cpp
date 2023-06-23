@@ -10,19 +10,17 @@ public:
   bool isPalindrome(const string &s) {
     auto left = begin(s), right = prev(end(s));
     while (left <= right) {
-      if (!isValid(tolower(*left))) {
+      if (!isValid(tolower(*left)))
         left++;
-        continue;
-      }
 
-      if (!isValid(tolower(*right))) {
+      else if (!isValid(tolower(*right)))
         right--;
-        continue;
-      }
 
-      if (tolower(*left) != tolower(*right))
+      else if (tolower(*left) != tolower(*right))
         return false;
-      left++, right--;
+
+      else
+        left++, right--;
     }
 
     return true;

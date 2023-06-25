@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
   int search(const vector<int> &nums, int target) {
-    auto left = begin(nums), right = end(nums);
+    auto left = cbegin(nums), right = cend(nums);
 
     while (left < right) {
       const auto d = distance(left, right);
@@ -22,6 +22,12 @@ public:
     return -1;
   }
 };
+
+int main() {
+  cout << Solution{}.search({-1, 0, 3, 5, 9, 12}, 9) << endl;
+  cout << Solution{}.search({-1, 0, 3, 5, 9, 12}, 2) << endl;
+  cout << Solution{}.search({}, 2) << endl;
+}
 
 /*
 class Solution {
@@ -45,9 +51,3 @@ public:
   }
 };
 */
-
-int main() {
-  cout << Solution{}.search({-1, 0, 3, 5, 9, 12}, 9) << endl;
-  cout << Solution{}.search({-1, 0, 3, 5, 9, 12}, 2) << endl;
-  cout << Solution{}.search({}, 2) << endl;
-}

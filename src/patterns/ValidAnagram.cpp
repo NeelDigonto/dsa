@@ -5,14 +5,14 @@ using namespace std;
 class Solution {
 public:
   bool isAnagram(const string &s, const string &t) {
-    unordered_map<char, int> counts;
-    counts.reserve(26);
+    array<int, static_cast<std::size_t>('z') + 1U> counts;
+    counts.fill(0);
 
     for (const auto &ch : s)
       counts[ch]++;
     for (const auto &ch : t)
       counts[ch]--;
-    for (const auto &[_, count] : counts)
+    for (auto count : counts)
       if (count != 0)
         return false;
     return true;

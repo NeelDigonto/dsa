@@ -2,7 +2,7 @@
 #include <core/Tree.hpp>
 using namespace std;
 
-class Solution {
+/* class Solution {
 public:
   TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (root->val > p->val && root->val > q->val)
@@ -10,6 +10,24 @@ public:
     if (root->val < p->val && root->val < q->val)
       return lowestCommonAncestor(root->right, p, q);
     return root;
+  }
+}; */
+
+class Solution {
+public:
+  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
+    TreeNode *current_node = root;
+
+    while (current_node != nullptr) {
+      if (current_node->val > p->val && current_node->val > q->val)
+        current_node = current_node->left;
+      else if (current_node->val < p->val && current_node->val < q->val)
+        current_node = current_node->right;
+      else
+        return current_node;
+    }
+
+    return nullptr;
   }
 };
 

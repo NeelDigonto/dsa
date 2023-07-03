@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/W352_Q1",
+      "program": "${workspaceFolder}/build/InsertDeleteGetRandom",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

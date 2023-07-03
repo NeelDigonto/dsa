@@ -13,6 +13,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(CMAKE_BUILD_TYPE "Debug")
 
+add_compile_options(-fsanitize=address)
+add_link_options(-fsanitize=address)
+
 # add_compile_definitions(DEBUG)
 function(add_code name path)
     add_executable(${name} ${path})
@@ -80,3 +83,6 @@ add_code(JumpGame "src/patterns/dp/JumpGame.cpp")
 add_code(MaximalSquare "src/patterns/dp/MaximalSquare.cpp")
 add_code(DecodeWays "src/patterns/dp/DecodeWays.cpp")
 add_code(CombinationSumIV "src/patterns/dp/CombinationSumIV.cpp")
+
+add_code(RansomNote "src/patterns/hash/RansomNote.cpp")
+add_code(InsertDeleteGetRandom "src/patterns/hash/InsertDeleteGetRandom.cpp")

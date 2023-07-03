@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/LCA",
+      "program": "${workspaceFolder}/build/W352_Q1",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/LongestCommonPrefix",
+      "program": "${workspaceFolder}/build/ClimbingStairs",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

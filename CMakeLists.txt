@@ -102,3 +102,5 @@ add_code(CharacterReplacement "src/patterns/string/CharacterReplacement.cpp")
 add_code(LargestNumber "src/patterns/string/LargestNumber.cpp")
 add_code(EncodeDecodeString "src/patterns/string/EncodeDecodeString.cpp")
 add_code(LongestCommonPrefix "src/patterns/string/LongestCommonPrefix.cpp")
+
+add_code(RotateArray "src/patterns/array/RotateArray.cpp")

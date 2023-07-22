@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/ClimbingStairs",
+      "program": "${workspaceFolder}/build/SortedSquares",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

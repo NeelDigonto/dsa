@@ -56,10 +56,8 @@ add_code(HelloWorld "src/HelloWorld.cpp")
 #add_code(W352_Q3 "src/leetcode/weekly/W352/W352_Q3.cpp")
 #add_code(W352_Q4 "src/leetcode/weekly/W352/W352_Q4.cpp")
 
-add_code(TwoSum "src/patterns/TwoSum.cpp")
 add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
 add_code(MergeTwoSortedLists "src/patterns/MergeTwoSortedLists.cpp")
-add_code(BuySellStocks "src/patterns/BuySellStocks.cpp")
 add_code(InvertBinaryTree "src/patterns/InvertBinaryTree.cpp")
 add_code(BinarySearch "src/patterns/BinarySearch.cpp")
 add_code(FloodFill "src/patterns/FloodFill.cpp")
@@ -90,6 +88,7 @@ add_code(CombinationSumIV "src/patterns/dp/CombinationSumIV.cpp")
 add_code(RansomNote "src/patterns/hash/RansomNote.cpp")
 add_code(InsertDeleteGetRandom "src/patterns/hash/InsertDeleteGetRandom.cpp")
 
+# STRINGS
 add_code(ValidPalindrome "src/patterns/string/ValidPalindrome.cpp")
 add_code(ValidAnagram "src/patterns/string/ValidAnagram.cpp")
 add_code(LongestSubtring "src/patterns/string/LongestSubtring.cpp")
@@ -100,7 +99,17 @@ add_code(FindAnagrams "src/patterns/string/FindAnagrams.cpp")
 add_code(GroupAnagrams "src/patterns/string/GroupAnagrams.cpp")
 add_code(CharacterReplacement "src/patterns/string/CharacterReplacement.cpp")
 add_code(LargestNumber "src/patterns/string/LargestNumber.cpp")
-add_code(EncodeDecodeString "src/patterns/string/EncodeDecodeString.cpp")
+#add_code(EncodeDecodeString "src/patterns/string/EncodeDecodeString.cpp")
 add_code(LongestCommonPrefix "src/patterns/string/LongestCommonPrefix.cpp")
 
+add_code(TwoSum "src/patterns/array/TwoSum.cpp")
+add_code(BuySellStocks "src/patterns/array/BuySellStocks.cpp")
+add_code(MajorityElement "src/patterns/array/MajorityElement.cpp")
+add_code(ContainsDuplicate "src/patterns/array/ContainsDuplicate.cpp")
+add_code(MeetingRooms "src/patterns/array/MeetingRooms.cpp")
+add_code(MoveZeros "src/patterns/array/MoveZeros.cpp")
+add_code(SortedSquares "src/patterns/array/SortedSquares.cpp")
+
+
 add_code(RotateArray "src/patterns/array/RotateArray.cpp")
+

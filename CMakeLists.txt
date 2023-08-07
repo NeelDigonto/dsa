@@ -118,3 +118,5 @@ add_code(RotateArray "src/patterns/array/RotateArray.cpp")
 add_code(InvertBinaryTree "src/patterns/tree/InvertBinaryTree.cpp")
 add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
 add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
+
+add_code(RomanToInteger "src/patterns/math/RomanToInteger.cpp")

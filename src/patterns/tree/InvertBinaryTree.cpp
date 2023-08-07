@@ -5,10 +5,10 @@ using namespace std;
 class Solution {
 public:
   TreeNode *invertTree(TreeNode *root) {
-    if (!root)
+    if (root == nullptr)
       return root;
 
-    const auto temp = root->left;
+    auto temp = root->left;
     root->left = root->right;
     root->right = temp;
 
@@ -21,8 +21,7 @@ public:
 
 int main() {
 
-  auto res1 =
-      Solution{}.invertTree(BinaryTree::deserialize_t({4, 2, 7, 1, 3, 6, 9}));
+  auto res1 = Solution{}.invertTree(BinaryTree::deserialize_t({4, 2, 7, 1, 3, 6, 9}));
   auto res2 = Solution{}.invertTree(BinaryTree::deserialize_t({2, 1, 3}));
   auto res3 = Solution{}.invertTree(BinaryTree::deserialize_t({}));
 

@@ -84,5 +84,6 @@
     "condition_variable": "cpp",
     "shared_mutex": "cpp",
     "numbers": "cpp"
-  }
+  },
+  "cmake.configureOnOpen": true
 }

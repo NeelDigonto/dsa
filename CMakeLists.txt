@@ -13,13 +13,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(CMAKE_BUILD_TYPE "Debug")
 
-add_compile_options(-fsanitize=address)
-add_compile_options(-fsanitize=undefined)
-add_compile_options(-fsanitize=leak)
-
-add_link_options(-fsanitize=address)
-add_link_options(-fsanitize=undefined)
-add_link_options(-fsanitize=leak)
+#add_compile_options(-fsanitize=address)
+#add_compile_options(-fsanitize=undefined)
+#add_compile_options(-fsanitize=leak)
 
 # add_compile_definitions(DEBUG)
 function(add_code name path)
@@ -56,13 +52,17 @@ add_code(HelloWorld "src/HelloWorld.cpp")
 #add_code(W352_Q3 "src/leetcode/weekly/W352/W352_Q3.cpp")
 #add_code(W352_Q4 "src/leetcode/weekly/W352/W352_Q4.cpp")
 
+add_code(BW109_Q1 "src/leetcode/biweekly/BW109/BW109_Q1.cpp")
+add_code(BW109_Q2 "src/leetcode/biweekly/BW109/BW109_Q2.cpp")
+add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
+add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
+
 add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
 add_code(MergeTwoSortedLists "src/patterns/MergeTwoSortedLists.cpp")
-add_code(InvertBinaryTree "src/patterns/InvertBinaryTree.cpp")
 add_code(BinarySearch "src/patterns/BinarySearch.cpp")
 add_code(FloodFill "src/patterns/FloodFill.cpp")
 add_code(LCA "src/patterns/LCA.cpp")
-#add_code(InsertInterval "src/patterns/InsertInterval.cpp")
+
 
 add_code(AddBinary "src/patterns/binary/AddBinary.cpp")
 add_code(FindDuplicateNumber "src/patterns/binary/FindDuplicateNumber.cpp")
@@ -109,7 +109,12 @@ add_code(ContainsDuplicate "src/patterns/array/ContainsDuplicate.cpp")
 add_code(MeetingRooms "src/patterns/array/MeetingRooms.cpp")
 add_code(MoveZeros "src/patterns/array/MoveZeros.cpp")
 add_code(SortedSquares "src/patterns/array/SortedSquares.cpp")
-
+add_code(InsertInterval "src/patterns/array/InsertInterval.cpp")
 
 add_code(RotateArray "src/patterns/array/RotateArray.cpp")
 
+
+
+add_code(InvertBinaryTree "src/patterns/tree/InvertBinaryTree.cpp")
+add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
+add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")

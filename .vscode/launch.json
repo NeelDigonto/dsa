@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/SortedSquares",
+      "program": "${workspaceFolder}/build/DiameterBinaryTree",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

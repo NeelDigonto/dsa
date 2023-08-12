@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.21)
 project(dsa)
 find_program(CCACHE_PROGRAM ccache)
 
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+
 if(CCACHE_PROGRAM)
     MESSAGE("CCACHE support enabled")
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
@@ -58,7 +61,6 @@ add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
 add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
 
 add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
-add_code(MergeTwoSortedLists "src/patterns/MergeTwoSortedLists.cpp")
 add_code(BinarySearch "src/patterns/BinarySearch.cpp")
 add_code(FloodFill "src/patterns/FloodFill.cpp")
 add_code(LCA "src/patterns/LCA.cpp")
@@ -120,3 +122,20 @@ add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
 add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
 
 add_code(RomanToInteger "src/patterns/math/RomanToInteger.cpp")
+add_code(PalindromeNumber "src/patterns/math/PalindromeNumber.cpp")
+add_code(RandomPickWeight "src/patterns/math/RandomPickWeight.cpp")
+add_code(ReverseInteger "src/patterns/math/ReverseInteger.cpp")
+add_code(Pow "src/patterns/math/Pow.cpp")
+
+add_code(HitCounter "src/patterns/queue/HitCounter.cpp")
+
+add_code(SpiralMatrix "src/patterns/matrix/SpiralMatrix.cpp")
+
+add_code(RotateImage "src/patterns/matrix/RotateImage.cpp")
+add_code(SetMatrixZeroes "src/patterns/matrix/SetMatrixZeroes.cpp")
+
+#Lists
+add_code(MergeTwoSortedLists "src/patterns/list/MergeTwoSortedLists.cpp")
+add_code(LinkedListCycle "src/patterns/list/LinkedListCycle.cpp")
+add_code(ReverseLinkedList "src/patterns/list/ReverseLinkedList.cpp")
+add_code(MiddleLinkedList "src/patterns/list/MiddleLinkedList.cpp")

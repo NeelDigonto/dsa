@@ -5,27 +5,57 @@ using namespace std;
 
 class LRUCache {
 private:
-  list<pair<int, int>> registry_;
-  unordered_map<int, decltype(registry_)::iterator> index_;
+  size_t capacity_;
+  list<pair<int, int>> list_;
+  unordered_map<int, decltype(list_)::iterator> index_;
 
 public:
-  LRUCache(int capacity) { index_.reserve(capacity); }
+  LRUCache(int capacity) {
+    capacity_ = capacity;
+    index_.reserve(capacity + 1);
+  }
 
   int get(int key) {
     const auto it = index_.find(key);
 
-    if (it != end(index_))
-      return it->second->second;
+    if (it == end(index_))
+      return -1;
+
+    if (it != end(index_)) {
+      int value = it->second->second;
+
+      if (it->second == begin(list_))
+        return value;
+
+      list_.erase(it->second);
+      list_.push_front({key, value});
+
+      index_.erase(key);
+      index_.insert({key, begin(list_)});
+
+      return value;
+    }
   }
 
   void put(int key, int value) {
     const auto it = index_.find(key);
 
-    if (it == end(index_)) {
-      registry_.push_back({key, value});
-      index_.insert({key, prev(registry_.end())});
-    } else {
-      it->second->second = 0;
+    const auto present = it != end(index_);
+
+    if (present) {
+      if (it->second != begin(list_))
+        return;
+
+      list_.erase(it->second);
+      index_.erase(key);
+    }
+
+    list_.push_front({key, value});
+    index_.insert({key, begin(list_)});
+
+    if (index_.size() > capacity_) {
+      index_.erase(list_.rbegin()->first);
+      list_.pop_back();
     }
   }
 };

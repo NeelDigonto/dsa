@@ -18,16 +18,10 @@ public:
   int get(int key) {
     const auto it = index_.find(key);
 
-    if (it == end(index_))
-      return -1;
-
     if (it != end(index_)) {
       int value = it->second->second;
 
-      if (it->second == begin(list_))
-        return value;
-
-      list_.erase(it->second);
+        list_.erase(it->second);
       list_.push_front({key, value});
 
       index_.erase(key);
@@ -35,6 +29,8 @@ public:
 
       return value;
     }
+
+    return -1;
   }
 
   void put(int key, int value) {
@@ -43,9 +39,6 @@ public:
     const auto present = it != end(index_);
 
     if (present) {
-      if (it->second != begin(list_))
-        return;
-
       list_.erase(it->second);
       index_.erase(key);
     }

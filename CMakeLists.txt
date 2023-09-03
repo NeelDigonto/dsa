@@ -148,3 +148,9 @@ add_code(SortLinkedList "src/patterns/list/SortLinkedList.cpp")
 add_code(PalindromeLinkedList "src/patterns/list/PalindromeLinkedList.cpp")
 add_code(ReorderList "src/patterns/list/ReorderList.cpp")
 add_code(RotateRightList "src/patterns/list/RotateRightList.cpp")
+
+#Heap
+add_code(KClosestPoints "src/patterns/heap/KClosestPoints.cpp")
+add_code(MedianFinder "src/patterns/heap/MedianFinder.cpp")
+add_code(MergeKLists "src/patterns/heap/MergeKLists.cpp")
+add_code(TaskScheduler "src/patterns/heap/TaskScheduler.cpp")

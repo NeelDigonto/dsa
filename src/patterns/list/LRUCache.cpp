@@ -21,7 +21,7 @@ public:
     if (it != end(index_)) {
       int value = it->second->second;
 
-        list_.erase(it->second);
+      list_.erase(it->second);
       list_.push_front({key, value});
 
       index_.erase(key);
@@ -35,7 +35,6 @@ public:
 
   void put(int key, int value) {
     const auto it = index_.find(key);
-
     const auto present = it != end(index_);
 
     if (present) {

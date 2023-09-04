@@ -83,7 +83,15 @@
     "clocale": "cpp",
     "condition_variable": "cpp",
     "shared_mutex": "cpp",
-    "numbers": "cpp"
+    "numbers": "cpp",
+    "__threading_support": "cpp",
+    "charconv": "cpp",
+    "semaphore": "cpp",
+    "stop_token": "cpp",
+    "thread": "cpp",
+    "cinttypes": "cpp",
+    "__mutex_base": "cpp",
+    "__verbose_abort": "cpp"
   },
   "cmake.configureOnOpen": true
 }

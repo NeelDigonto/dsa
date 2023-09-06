@@ -65,11 +65,8 @@ add_code(BW109_Q2 "src/leetcode/biweekly/BW109/BW109_Q2.cpp")
 add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
 add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
 
+#Stack
 add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
-add_code(BinarySearch "src/patterns/BinarySearch.cpp")
-add_code(FloodFill "src/patterns/FloodFill.cpp")
-add_code(LCA "src/patterns/LCA.cpp")
-
 
 add_code(AddBinary "src/patterns/binary/AddBinary.cpp")
 add_code(FindDuplicateNumber "src/patterns/binary/FindDuplicateNumber.cpp")
@@ -120,12 +117,6 @@ add_code(InsertInterval "src/patterns/array/InsertInterval.cpp")
 
 add_code(RotateArray "src/patterns/array/RotateArray.cpp")
 
-
-
-add_code(InvertBinaryTree "src/patterns/tree/InvertBinaryTree.cpp")
-add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
-add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
-
 add_code(RomanToInteger "src/patterns/math/RomanToInteger.cpp")
 add_code(PalindromeNumber "src/patterns/math/PalindromeNumber.cpp")
 add_code(RandomPickWeight "src/patterns/math/RandomPickWeight.cpp")
@@ -154,6 +145,9 @@ add_code(PalindromeLinkedList "src/patterns/list/PalindromeLinkedList.cpp")
 add_code(ReorderList "src/patterns/list/ReorderList.cpp")
 add_code(RotateRightList "src/patterns/list/RotateRightList.cpp")
 
+#Binary Search
+add_code(BinarySearch "src/patterns/bsearch/BinarySearch.cpp")
+
 #Heap
 add_code(KClosestPoints "src/patterns/heap/KClosestPoints.cpp")
 add_code(MedianFinder "src/patterns/heap/MedianFinder.cpp")
@@ -162,3 +156,14 @@ add_code(TaskScheduler "src/patterns/heap/TaskScheduler.cpp")
 add_code(KFrequentWords "src/patterns/heap/KFrequentWords.cpp")
 add_code(KClosestElements "src/patterns/heap/KClosestElements.cpp")
 add_code(KthLargest "src/patterns/heap/KthLargest.cpp")
+
+#Tree
+add_code(InvertBinaryTree "src/patterns/tree/InvertBinaryTree.cpp")
+add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
+add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
+add_code(LevelOrderTraversal "src/patterns/tree/LevelOrderTraversal.cpp")
+add_code(LCA "src/patterns/tree/LCA.cpp")
+
+#Graph
+add_code(FloodFill "src/patterns/graph/FloodFill.cpp")
+add_code(01Matrix "src/patterns/graph/01Matrix.cpp")

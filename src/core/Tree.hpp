@@ -19,16 +19,14 @@ struct TreeNode {
   TreeNode *right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode *left, TreeNode *right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class BinaryTree {
 public:
   using arr_rep_t = std::vector<std::optional<int>>;
 
-  template <typename Callback>
-  static void lvlorderTraverse(const TreeNode *_root, Callback _fn) {
+  template <typename Callback> static void lvlorderTraverse(const TreeNode *_root, Callback _fn) {
     if (_root == nullptr) {
       _fn(std::optional<int>{std::nullopt});
       return;
@@ -61,9 +59,7 @@ public:
   [[nodiscard]] static arr_rep_t serialize_t(TreeNode *_root) {
     arr_rep_t _arr_rep;
 
-    lvlorderTraverse(_root, [&_arr_rep](const std::optional<int> &_res) {
-      _arr_rep.push_back(_res);
-    });
+    lvlorderTraverse(_root, [&_arr_rep](const std::optional<int> &_res) { _arr_rep.push_back(_res); });
 
     // auto rit = prev(end(_arr_rep));
     // while (rit != begin(_arr_rep) && *rit == std::nullopt) advance(rit, -1);
@@ -80,8 +76,7 @@ public:
     arr_rep_t _arr_rep = serialize_t(root);
 
     const char *buffer_data = reinterpret_cast<const char *>(_arr_rep.data());
-    const std::size_t buffer_size =
-        _arr_rep.size() * sizeof(arr_rep_t::value_type);
+    const std::size_t buffer_size = _arr_rep.size() * sizeof(arr_rep_t::value_type);
 
     std::string buffer(buffer_data, buffer_size);
 
@@ -99,15 +94,11 @@ public:
     queqe.push(root);
 
     while (!queqe.empty()) {
-      const auto node = queqe.front();
+      auto node = queqe.front();
 
-      node->left = (pos != _arr_rep.end() && pos->has_value())
-                       ? new TreeNode(pos->value())
-                       : nullptr;
+      node->left = (pos != _arr_rep.end() && pos->has_value()) ? new TreeNode(pos->value()) : nullptr;
       pos++;
-      node->right = (pos != _arr_rep.end() && pos->has_value())
-                        ? new TreeNode(pos->value())
-                        : nullptr;
+      node->right = (pos != _arr_rep.end() && pos->has_value()) ? new TreeNode(pos->value()) : nullptr;
       pos++;
 
       if (node->left != nullptr)
@@ -128,16 +119,14 @@ public:
 
     arr_rep_t _arr_rep;
     auto buffer_t = reinterpret_cast<std::optional<int> *>(data.data());
-    _arr_rep.assign(buffer_t,
-                    buffer_t + data.size() / sizeof(arr_rep_t::value_type));
+    _arr_rep.assign(buffer_t, buffer_t + data.size() / sizeof(arr_rep_t::value_type));
 
     return deserialize_t(_arr_rep);
   }
 
   static void printLvlOrderTraverse(TreeNode *_root) {
     lvlorderTraverse(_root, [](std::optional<int> _elem) {
-      std::cout << (_elem.has_value() ? std::to_string(_elem.value()) : "null")
-                << ", ";
+      std::cout << (_elem.has_value() ? std::to_string(_elem.value()) : "null") << ", ";
     });
   }
 };

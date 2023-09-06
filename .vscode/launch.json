@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/KthLargest",
+      "program": "${workspaceFolder}/build/InvertBinaryTree",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

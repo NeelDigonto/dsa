@@ -66,7 +66,7 @@ add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
 add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
 
 #Stack
-add_code(ValidParentheses "src/patterns/ValidParentheses.cpp")
+add_code(ValidParentheses "src/patterns/stack/ValidParentheses.cpp")
 
 add_code(AddBinary "src/patterns/binary/AddBinary.cpp")
 add_code(FindDuplicateNumber "src/patterns/binary/FindDuplicateNumber.cpp")
@@ -162,7 +162,9 @@ add_code(InvertBinaryTree "src/patterns/tree/InvertBinaryTree.cpp")
 add_code(BalancedBinaryTree "src/patterns/tree/BalancedBinaryTree.cpp")
 add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
 add_code(LevelOrderTraversal "src/patterns/tree/LevelOrderTraversal.cpp")
+add_code(BSTreeLCA "src/patterns/tree/BSTreeLCA.cpp")
 add_code(LCA "src/patterns/tree/LCA.cpp")
+add_code(BTreeSerialize "src/patterns/tree/BTreeSerialize.cpp")
 
 #Graph
 add_code(FloodFill "src/patterns/graph/FloodFill.cpp")

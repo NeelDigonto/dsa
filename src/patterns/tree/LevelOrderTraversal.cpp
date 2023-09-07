@@ -6,32 +6,33 @@ class Solution {
 public:
   vector<vector<int>> levelOrder(TreeNode *root) {
     if (!root)
-      return {{}};
+      return {};
 
-    vector<vector<int>> res;
-    size_t i = 0, level = 0;
-
+    vector<vector<int>> levels;
     queue<TreeNode *> q;
+
     q.push(root);
 
     while (!q.empty()) {
-      auto node = q.front();
-      q.pop();
+      levels.emplace_back(vector<int>{});
 
-      res[level].push_back(node->val);
+      size_t level_breadth = q.size();
+      for (size_t i = 0; i != level_breadth; ++i) {
+        auto node = q.front();
+        q.pop();
 
-      if (node->val) {
-        q.push(node->left);
-        q.push(node->right);
+        if (node) {
+          levels[levels.size() - 1].push_back(node->val);
+
+          if (node->left)
+            q.push(node->left);
+          if (node->right)
+            q.push(node->right);
+        }
       }
-
-      i++;
-
-      if (i == static_cast<int>(pow(2, level)))
-        level++;
     }
 
-    return res;
+    return levels;
   }
 };
 
@@ -40,4 +41,5 @@ int main() {
   cout << Solution{}.levelOrder(BinaryTree::deserialize_t({3, 9, 20, nullopt, nullopt, 15, 7})) << endl;
   cout << Solution{}.levelOrder(BinaryTree::deserialize_t({1})) << endl;
   cout << Solution{}.levelOrder(BinaryTree::deserialize_t({})) << endl;
+  cout << Solution{}.levelOrder(BinaryTree::deserialize_t({1, 2, nullopt, 3, nullopt, 4, nullopt, 5})) << endl;
 }

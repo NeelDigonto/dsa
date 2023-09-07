@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/InvertBinaryTree",
+      "program": "${workspaceFolder}/build/BTreeSerialize",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

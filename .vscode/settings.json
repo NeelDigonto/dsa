@@ -91,7 +91,9 @@
     "thread": "cpp",
     "cinttypes": "cpp",
     "__mutex_base": "cpp",
-    "__verbose_abort": "cpp"
+    "__verbose_abort": "cpp",
+    "ranges": "cpp",
+    "span": "cpp"
   },
   "cmake.configureOnOpen": true
 }

@@ -2,42 +2,34 @@
 #include <core/Tree.hpp>
 using namespace std;
 
-/* class Solution {
-public:
-  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
-    if (root->val > p->val && root->val > q->val)
-      return lowestCommonAncestor(root->left, p, q);
-    if (root->val < p->val && root->val < q->val)
-      return lowestCommonAncestor(root->right, p, q);
-    return root;
-  }
-}; */
-
 class Solution {
 public:
   TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
-    TreeNode *current_node = root;
+    if (!root)
+      return nullptr;
 
-    while (current_node != nullptr) {
-      if (current_node->val > p->val && current_node->val > q->val)
-        current_node = current_node->left;
-      else if (current_node->val < p->val && current_node->val < q->val)
-        current_node = current_node->right;
-      else
-        return current_node;
-    }
+    if (root == p || root == q)
+      return root;
 
-    return nullptr;
+    auto l = lowestCommonAncestor(root->left, p, q);
+    auto r = lowestCommonAncestor(root->right, p, q);
+
+    if (l && r)
+      return root;
+    if (l)
+      return l;
+    else
+      return r;
   }
 };
 
 int main() {
 
-  const auto root1 = BinaryTree::deserialize_t({6, 2, 8, 0, 4, 7, 9, nullopt, nullopt, 3, 5});
-  const auto root2 = BinaryTree::deserialize_t({6, 2, 8, 0, 4, 7, 9, nullopt, nullopt, 3, 5});
-  const auto root3 = BinaryTree::deserialize_t({2, 1});
+  const auto root1 = BinaryTree::deserialize_t({3, 5, 1, 6, 2, 0, 8, nullopt, nullopt, 5, 1}); // 3
+  const auto root2 = BinaryTree::deserialize_t({3, 5, 1, 6, 2, 0, 8, nullopt, nullopt, 5, 4}); // 5
+  const auto root3 = BinaryTree::deserialize_t({1, 2});                                        // 1
 
   cout << Solution{}.lowestCommonAncestor(root1, root1->left, root1->right)->val << endl;
-  cout << Solution{}.lowestCommonAncestor(root2, root2->left, root2->left->right)->val << endl;
+  cout << Solution{}.lowestCommonAncestor(root2, root2->left, root2->left->right->right)->val << endl;
   cout << Solution{}.lowestCommonAncestor(root3, root3, root3->left)->val << endl;
 }

@@ -130,3 +130,91 @@ public:
     });
   }
 };
+
+static constexpr auto btnull = std::numeric_limits<int>::max();
+
+inline std::vector<int> BTSerialize_t(const TreeNode *const root) noexcept {
+
+  std::vector<int> level_order;
+  std::queue<const TreeNode *> q;
+  q.push(root);
+
+  while (!q.empty()) {
+    auto node = q.front();
+
+    if (node) {
+      level_order.push_back(node->val);
+      q.push(node->left);
+      q.push(node->right);
+    } else
+      level_order.push_back(btnull);
+
+    q.pop();
+  }
+
+  return level_order;
+}
+
+// inline std::string BTSerialize(TreeNode *root) noexcept {
+//
+//   auto v = BTSerialize_t(root);
+//
+//   const size_t valid_range_end = distance(
+//       find_if_not(std::crbegin(v), std::crend(v), [](const auto &val) { return val == btnull; }), std::crend(v));
+//
+//   std::string s_view(valid_range_end * sizeof(int), {});
+//   auto buffer = reinterpret_cast<int *>(s_view.data());
+//
+//   std::copy_n(v.data(), valid_range_end, buffer);
+//
+//   return s_view;
+// }
+
+inline TreeNode *BTDeserialize_t(const int *buffer, size_t node_count) noexcept {
+  std::queue<TreeNode *> q;
+  TreeNode *root = new TreeNode(buffer[0]);
+  q.push(root);
+
+  for (size_t i = 1; i != node_count;) {
+    auto node = q.front();
+    q.pop();
+
+    if (buffer[i] != btnull)
+      node->left = new TreeNode(buffer[i]), q.push(node->left);
+    i++;
+
+    if (i == node_count)
+      break;
+
+    if (buffer[i] != btnull)
+      node->right = new TreeNode(buffer[i]), q.push(node->right);
+    i++;
+  }
+
+  return root;
+}
+
+inline TreeNode *BTDeserialize(const std::vector<int> &data) noexcept {
+  if (data.size() == 0)
+    return nullptr;
+
+  size_t node_count = data.size() / sizeof(int);
+  auto *buffer = reinterpret_cast<const int *>(data.data());
+
+  return BTDeserialize_t(buffer, node_count);
+}
+
+std::ostream &operator<<(std::ostream &os, const TreeNode *root) {
+  auto v = BTSerialize_t(root);
+  auto vf = BTSerialize_t(BTDeserialize(v));
+
+  os << "[ ";
+  for (auto it = v.cbegin(); it != v.cend(); ++it)
+    if (*it != btnull)
+      os << *it << " ";
+    else
+      os << "null ";
+  os << "]";
+
+  return os;
+}

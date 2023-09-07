@@ -85,8 +85,10 @@ template <typename T> std::ostream &operator<<(std::ostream &os, const std::vect
 }
 
 template <typename T> std::ostream &operator<<(std::ostream &os, const std::vector<std::vector<T>> &v) {
+  os << "[ \n";
   for (auto row = v.cbegin(); row != v.cend(); ++row)
     os << *row << std::endl;
+  os << "]\n";
   return os;
 }
 

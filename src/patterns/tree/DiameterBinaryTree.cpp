@@ -5,9 +5,10 @@ using namespace std;
 class Solution {
 private:
   struct SubTreeRes {
-    int height;
-    int max_diameter;
+    int16_t height;
+    int16_t max_diameter;
   };
+
   SubTreeRes _diameterOfBinaryTree(TreeNode *root) {
 
     if (!root)
@@ -18,13 +19,7 @@ private:
 
     SubTreeRes res;
     res.height = max(l.height, r.height) + 1;
-    res.max_diameter = l.height + r.height;
-
-    if (root->left)
-      res.max_diameter++;
-
-    if (root->right)
-      res.max_diameter++;
+    res.max_diameter = max(static_cast<int16_t>(l.height + r.height), res.max_diameter);
 
     return res;
   }
@@ -35,11 +30,11 @@ public:
 
 int main() {
 
-  auto res1 = Solution{}.diameterOfBinaryTree(BinaryTree::deserialize_t({1, 2, 3, 4, 5}));
-  auto res2 = Solution{}.diameterOfBinaryTree(BinaryTree::deserialize_t({1, 2}));
-
-  // 4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2
-
-  cout << boolalpha << res1 << endl;
-  cout << boolalpha << res2 << endl;
+  // cout << Solution{}.diameterOfBinaryTree(BTDeserialize({1, 2, 3, 4, 5})) << endl; // 3
+  cout << Solution{}.diameterOfBinaryTree(BTDeserialize({1, 2})) << endl; // 1
+  //  cout << Solution{}.diameterOfBinaryTree(BinaryTree::deserialize_t(
+  //              {4,       -7, -3,      nullopt, nullopt, -9,      -3,      9,       -7,      -4,
+  //               nullopt, 6,  nullopt, -6,      -6,      nullopt, nullopt, 0,       6,       5,
+  //               nullopt, 9,  nullopt, nullopt, -1,      -4,      nullopt, nullopt, nullopt, -2}))
+  //       << endl; // 8
 }

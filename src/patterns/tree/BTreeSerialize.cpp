@@ -78,8 +78,7 @@ public:
 };
 
 int main() {
-  // cout << Codec{}.deserialize(Codec{}.serialize(BinaryTree::deserialize_t({1, 2, 3, nullopt, nullopt, 4, 5}))) <<
-  // endl;
-  cout << Codec{}.deserialize(Codec{}.serialize(BinaryTree::deserialize_t({}))) << endl;
-  cout << Codec{}.deserialize(Codec{}.serialize(BinaryTree::deserialize_t({1, 2}))) << endl;
+  cout << Codec{}.deserialize(Codec{}.serialize(BTDeserialize({1, 2, 3, btnull, btnull, 4, 5}))) << endl;
+  cout << Codec{}.deserialize(Codec{}.serialize(BTDeserialize({}))) << endl;
+  cout << Codec{}.deserialize(Codec{}.serialize(BTDeserialize({1, 2}))) << endl;
 }

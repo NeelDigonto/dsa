@@ -135,7 +135,7 @@ static constexpr auto btnull = std::numeric_limits<int>::max();
 
 inline std::vector<int> BTSerialize_t(const TreeNode *const root) noexcept {
 
-  std::vector<int> level_order;
+  std::vector<int> v;
   std::queue<const TreeNode *> q;
   q.push(root);
 
@@ -143,16 +143,19 @@ inline std::vector<int> BTSerialize_t(const TreeNode *const root) noexcept {
     auto node = q.front();
 
     if (node) {
-      level_order.push_back(node->val);
+      v.push_back(node->val);
       q.push(node->left);
       q.push(node->right);
     } else
-      level_order.push_back(btnull);
+      v.push_back(btnull);
 
     q.pop();
   }
 
-  return level_order;
+  const size_t valid_range_end = std::distance(
+      std::find_if_not(std::crbegin(v), std::crend(v), [](const auto &val) { return val == btnull; }), std::crend(v));
+
+  return std::vector<int>(std::begin(v), std::next(begin(v), valid_range_end));
 }
 
 // inline std::string BTSerialize(TreeNode *root) noexcept {
@@ -198,7 +201,7 @@ inline TreeNode *BTDeserialize(const std::vector<int> &data) noexcept {
   if (data.size() == 0)
     return nullptr;
 
-  size_t node_count = data.size() / sizeof(int);
+  size_t node_count = data.size();
   auto *buffer = reinterpret_cast<const int *>(data.data());
 
   return BTDeserialize_t(buffer, node_count);
@@ -206,7 +209,6 @@ inline TreeNode *BTDeserialize(const std::vector<int> &data) noexcept {
 
 std::ostream &operator<<(std::ostream &os, const TreeNode *root) {
   auto v = BTSerialize_t(root);
-  auto vf = BTSerialize_t(BTDeserialize(v));
 
   os << "[ ";
   for (auto it = v.cbegin(); it != v.cend(); ++it)

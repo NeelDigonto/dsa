@@ -38,8 +38,8 @@ public:
 
 int main() {
 
-  cout << Solution{}.levelOrder(BinaryTree::deserialize_t({3, 9, 20, nullopt, nullopt, 15, 7})) << endl;
-  cout << Solution{}.levelOrder(BinaryTree::deserialize_t({1})) << endl;
-  cout << Solution{}.levelOrder(BinaryTree::deserialize_t({})) << endl;
-  cout << Solution{}.levelOrder(BinaryTree::deserialize_t({1, 2, nullopt, 3, nullopt, 4, nullopt, 5})) << endl;
+  cout << Solution{}.levelOrder(BTDeserialize({3, 9, 20, btnull, btnull, 15, 7})) << endl;
+  cout << Solution{}.levelOrder(BTDeserialize({1})) << endl;
+  cout << Solution{}.levelOrder(BTDeserialize({})) << endl;
+  cout << Solution{}.levelOrder(BTDeserialize({1, 2, btnull, 3, btnull, 4, btnull, 5})) << endl;
 }

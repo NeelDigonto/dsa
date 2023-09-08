@@ -33,11 +33,7 @@ public:
 
 int main() {
 
-  auto res1 = Solution{}.isBalanced(BinaryTree::deserialize_t({3, 9, 20, nullopt, nullopt, 15, 7}));
-  auto res2 = Solution{}.isBalanced(BinaryTree::deserialize_t({1, 2, 2, 3, 3, nullopt, nullopt, 4, 4}));
-  auto res3 = Solution{}.isBalanced(BinaryTree::deserialize_t({}));
-
-  cout << boolalpha << res1 << endl;
-  cout << boolalpha << res2 << endl;
-  cout << boolalpha << res3 << endl;
+  cout << boolalpha << Solution{}.isBalanced(BTDeserialize({3, 9, 20, btnull, btnull, 15, 7})) << endl;
+  cout << boolalpha << Solution{}.isBalanced(BTDeserialize({1, 2, 2, 3, 3, btnull, btnull, 4, 4})) << endl;
+  cout << boolalpha << Solution{}.isBalanced(BTDeserialize({})) << endl;
 }

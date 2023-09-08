@@ -164,6 +164,9 @@ add_code(DiameterBinaryTree "src/patterns/tree/DiameterBinaryTree.cpp")
 add_code(LevelOrderTraversal "src/patterns/tree/LevelOrderTraversal.cpp")
 add_code(LCA "src/patterns/tree/LCA.cpp")
 add_code(BTreeSerialize "src/patterns/tree/BTreeSerialize.cpp")
+add_code(BTRightView "src/patterns/tree/BTRightView.cpp")
+add_code(BTMaxDepth "src/patterns/tree/BTMaxDepth.cpp")
+
 
 #BST
 add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")

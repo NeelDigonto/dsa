@@ -5,14 +5,14 @@ using namespace std;
 class Solution {
 public:
   bool containsDuplicate(const vector<int> &nums) {
-    unordered_map<int, int> registry_;
+    unordered_set<int> registry_;
 
-    for (auto &num : nums)
-      registry_[num]++;
-
-    for (auto &[num, count] : registry_)
-      if (count > 1)
+    for (auto &num : nums) {
+      if (registry_.find(num) != end(registry_))
         return true;
+
+      registry_.insert(num);
+    }
 
     return false;
   }

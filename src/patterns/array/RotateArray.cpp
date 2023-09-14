@@ -6,23 +6,22 @@ class Solution {
 public:
   void rotate(vector<int> &nums, int k) {
     k = k % nums.size();
-    int prev, curr;
-    for (int i = 0; i < k; i++) {
-      prev = nums[nums.size() - 1];
-      for (int j = 0; j < nums.size(); j++) {
-        curr = nums[j];
-        nums[j] = prev;
-        prev = curr;
-      }
-    }
+
+    reverse(begin(nums), end(nums));
+    reverse(begin(nums), next(begin(nums), k));
+    reverse(next(begin(nums), k), end(nums));
   }
 };
 
 int main() {
   {
     vector<int> nums{1, 2, 3, 4, 5, 6, 7};
-    Solution{}.rotate(nums, 3);
-
+    Solution{}.rotate(nums, 3); // [5,6,7,1,2,3,4]
+    cout << nums << endl;
+  }
+  {
+    vector<int> nums{-1, -100, 3, 99};
+    Solution{}.rotate(nums, 2); // [3,99,-1,-100]
     cout << nums << endl;
   }
 }

@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
   vector<int> sortedSquares(const vector<int> &nums) {
-    size_t pos_idx = distance(begin(nums), find_if(begin(nums), end(nums), [](auto val) { return val >= 0; })),
+    size_t pos_idx = distance(cbegin(nums), find_if(cbegin(nums), cend(nums), [](const auto val) { return val >= 0; })),
            neg_idx = pos_idx - 1;
 
     vector<int> sorted_squares;

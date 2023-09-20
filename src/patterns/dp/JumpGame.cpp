@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
-  bool canJump(const vector<int> &nums) {
+private:
+  bool canJumpDP(const vector<int> &nums) {
     if (nums.size() == 1)
       return true;
 
@@ -22,10 +22,29 @@ public:
 
     return dp[0];
   }
+
+  inline bool canJumpGreedy(const vector<int> &nums) const noexcept {
+    if (nums.size() == 1)
+      return true;
+
+    size_t goal_idx = nums.size() - 1;
+
+    for (size_t i = goal_idx - 1; i != -1; --i)
+      if (nums[i] >= goal_idx - i)
+        goal_idx = i;
+
+    return goal_idx == 0;
+  }
+
+public:
+  bool canJump(const vector<int> &nums) { //
+    // return canJump(nums);
+    return canJumpGreedy(nums);
+  }
 };
 
 int main() {
-  cout << Solution{}.canJump({2, 3, 1, 1, 4}) << endl;
-  cout << Solution{}.canJump({3, 2, 1, 0, 4}) << endl;
-  cout << Solution{}.canJump({2, 0}) << endl; // false
+  cout << boolalpha << Solution{}.canJump({2, 3, 1, 1, 4}) << endl; // true
+  cout << boolalpha << Solution{}.canJump({3, 2, 1, 0, 4}) << endl; // false
+  cout << boolalpha << Solution{}.canJump({2, 0}) << endl;          // true
 }

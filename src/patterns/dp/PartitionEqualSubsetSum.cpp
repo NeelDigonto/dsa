@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool canPartition(const vector<int> &nums, vector<vector<int_fast8_t>> &dp, int idx, int subset_sum) {
+  bool canPartition(const vector<int> &nums, vector<vector<int8_t>> &dp, int idx, int subset_sum) {
 
     if (subset_sum == 0)
       return true;
@@ -32,7 +32,7 @@ public:
 
     const auto subset_sum = total_sum / 2;
 
-    vector<vector<int_fast8_t>> dp(nums.size(), vector<int_fast8_t>(subset_sum + 1, -1));
+    vector<vector<int8_t>> dp(nums.size(), vector<int8_t>(subset_sum + 1, -1));
 
     return canPartition(nums, dp, nums.size() - 1, subset_sum);
   }

@@ -20,7 +20,7 @@ public:
 };
 
 int main() {
-  cout << Solution{}.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}) << endl;
-  cout << Solution{}.maxSubArray({1}) << endl;
-  cout << Solution{}.maxSubArray({5, 4, -1, 7, 8}) << endl;
+  cout << Solution{}.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}) << endl; // 6
+  cout << Solution{}.maxSubArray({1}) << endl;                             // 1
+  cout << Solution{}.maxSubArray({5, 4, -1, 7, 8}) << endl;                // 23
 }

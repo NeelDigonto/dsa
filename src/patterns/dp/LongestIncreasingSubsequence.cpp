@@ -9,10 +9,10 @@ public:
     vector<int> dp(nums.size(), 1);
     dp[0] = 1;
 
-    for (size_t i = 1; i != nums.size(); ++i)
-      for (size_t j = 0; j != i; ++j)
-        if (nums[j] < nums[i])
-          dp[i] = max(dp[i], dp[j] + 1);
+    for (size_t r = 1; r != nums.size(); ++r)
+      for (size_t l = 0; l != r; ++l)
+        if (nums[l] < nums[r])
+          dp[r] = max(dp[r], dp[l] + 1);
 
     return *max_element(begin(dp), end(dp));
   }

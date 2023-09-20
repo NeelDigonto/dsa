@@ -65,6 +65,10 @@ add_code(BW109_Q2 "src/leetcode/biweekly/BW109/BW109_Q2.cpp")
 add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
 add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
 
+# Swiggy
+add_code(SW_Q1 "src/swiggy/SW_Q1.cpp")
+add_code(SW_Q2 "src/swiggy/SW_Q2.cpp")
+
 #Array
 add_code(TwoSum "src/patterns/array/TwoSum.cpp")
 add_code(BuySellStocks "src/patterns/array/BuySellStocks.cpp")
@@ -177,7 +181,9 @@ add_code(LCA "src/patterns/tree/LCA.cpp")
 add_code(BTreeSerialize "src/patterns/tree/BTreeSerialize.cpp")
 add_code(BTRightView "src/patterns/tree/BTRightView.cpp")
 add_code(BTMaxDepth "src/patterns/tree/BTMaxDepth.cpp")
-
+add_code(SameTree "src/patterns/tree/SameTree.cpp")
+add_code(SymmetricTree "src/patterns/tree/SymmetricTree.cpp")
+add_code(SubTree "src/patterns/tree/SubTree.cpp")
 
 #BST
 add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")
@@ -185,3 +191,4 @@ add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")
 #Graph
 add_code(FloodFill "src/patterns/graph/FloodFill.cpp")
 add_code(01Matrix "src/patterns/graph/01Matrix.cpp")
+

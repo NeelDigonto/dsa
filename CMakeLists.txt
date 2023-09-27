@@ -184,6 +184,11 @@ add_code(BTMaxDepth "src/patterns/tree/BTMaxDepth.cpp")
 add_code(SameTree "src/patterns/tree/SameTree.cpp")
 add_code(SymmetricTree "src/patterns/tree/SymmetricTree.cpp")
 add_code(SubTree "src/patterns/tree/SubTree.cpp")
+add_code(BuildTree "src/patterns/tree/BuildTree.cpp")
+add_code(PathSum2 "src/patterns/tree/PathSum2.cpp")
+add_code(BTMaxWidth "src/patterns/tree/BTMaxWidth.cpp")
+add_code(BTZigZag "src/patterns/tree/BTZigZag.cpp")
+add_code(PathSum3 "src/patterns/tree/PathSum3.cpp")
 
 #BST
 add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")

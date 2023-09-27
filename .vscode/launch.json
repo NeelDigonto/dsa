@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/JumpGame",
+      "program": "${workspaceFolder}/build/01Matrix",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

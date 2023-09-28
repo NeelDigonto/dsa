@@ -196,4 +196,5 @@ add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")
 #Graph
 add_code(FloodFill "src/patterns/graph/FloodFill.cpp")
 add_code(01Matrix "src/patterns/graph/01Matrix.cpp")
+add_code(CloneGraph "src/patterns/graph/CloneGraph.cpp")
 

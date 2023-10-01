@@ -35,10 +35,10 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_code(HelloWorld "src/HelloWorld.cpp")
 
-#add_code(BW94_Q1 "src/leetcode/biweekly/BW94_Q1.cpp")
-#add_code(BW94_Q2 "src/leetcode/biweekly/BW94_Q2.cpp")
-#add_code(BW94_Q3 "src/leetcode/biweekly/BW94_Q3.cpp")
-#add_code(BW94_Q4 "src/leetcode/biweekly/BW94_Q4.cpp")
+#add_code(BW94_Q1 "src/leetcode/biweekly/BW94/BW94_Q1.cpp")
+#add_code(BW94_Q2 "src/leetcode/biweekly/BW94/BW94_Q2.cpp")
+#add_code(BW94_Q3 "src/leetcode/biweekly/BW94/BW94_Q3.cpp")
+#add_code(BW94_Q4 "src/leetcode/biweekly/BW94/BW94_Q4.cpp")
 
 #add_code(W325_Q1 "src/leetcode/weekly/W325/W325_Q1.cpp")
 #add_code(W325_Q2 "src/leetcode/weekly/W325/W325_Q2.cpp")
@@ -64,6 +64,11 @@ add_code(BW109_Q1 "src/leetcode/biweekly/BW109/BW109_Q1.cpp")
 add_code(BW109_Q2 "src/leetcode/biweekly/BW109/BW109_Q2.cpp")
 add_code(BW109_Q3 "src/leetcode/biweekly/BW109/BW109_Q3.cpp")
 add_code(BW109_Q4 "src/leetcode/biweekly/BW109/BW109_Q4.cpp")
+
+add_code(BW114_Q1 "src/leetcode/biweekly/BW114/BW114_Q1.cpp")
+add_code(BW114_Q2 "src/leetcode/biweekly/BW114/BW114_Q2.cpp")
+add_code(BW114_Q3 "src/leetcode/biweekly/BW114/BW114_Q3.cpp")
+add_code(BW114_Q4 "src/leetcode/biweekly/BW114/BW114_Q4.cpp")
 
 # Swiggy
 add_code(SW_Q1 "src/swiggy/SW_Q1.cpp")
@@ -197,4 +202,6 @@ add_code(BSTreeLCA "src/patterns/bst/BSTreeLCA.cpp")
 add_code(FloodFill "src/patterns/graph/FloodFill.cpp")
 add_code(01Matrix "src/patterns/graph/01Matrix.cpp")
 add_code(CloneGraph "src/patterns/graph/CloneGraph.cpp")
-
+add_code(CourseSchedule "src/patterns/graph/CourseSchedule.cpp")
+add_code(CourseSchedule2 "src/patterns/graph/CourseSchedule2.cpp")
+add_code(NumberOfIslands "src/patterns/graph/NumberOfIslands.cpp")

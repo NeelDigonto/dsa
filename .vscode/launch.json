@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/CloneGraph",
+      "program": "${workspaceFolder}/build/BW114_Q2",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

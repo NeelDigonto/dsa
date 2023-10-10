@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/BW114_Q2",
+      "program": "${workspaceFolder}/build/AccountsMerge",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

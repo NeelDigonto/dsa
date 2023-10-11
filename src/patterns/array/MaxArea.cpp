@@ -9,7 +9,7 @@ public:
     auto l = begin(height), r = prev(end(height));
 
     while (l < r) {
-      marea = max(marea, min(*l, *r) * static_cast<int>(distance(l, r)));
+      marea = max<int>(marea, min(*l, *r) * distance(l, r));
 
       if (*l <= *r)
         l++;

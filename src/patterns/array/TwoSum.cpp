@@ -23,7 +23,7 @@ public:
 };
 
 int main() {
-  cout << Solution{}.twoSum({2, 7, 11, 15}, 9) << endl;
-  cout << Solution{}.twoSum({3, 2, 4}, 6) << endl;
-  cout << Solution{}.twoSum({3, 3}, 6) << endl;
+  cout << Solution{}.twoSum({2, 7, 11, 15}, 9) << endl; // [0, 1]
+  cout << Solution{}.twoSum({3, 2, 4}, 6) << endl;      // [1, 2]
+  cout << Solution{}.twoSum({3, 3}, 6) << endl;         // [0, 1]
 }

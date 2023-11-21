@@ -76,6 +76,11 @@ add_code(BW114_Q2 "src/leetcode/biweekly/BW114/BW114_Q2.cpp")
 add_code(BW114_Q3 "src/leetcode/biweekly/BW114/BW114_Q3.cpp")
 add_code(BW114_Q4 "src/leetcode/biweekly/BW114/BW114_Q4.cpp")
 
+add_code(BW116_Q1 "src/leetcode/biweekly/BW116/BW116_Q1.cpp")
+add_code(BW116_Q2 "src/leetcode/biweekly/BW116/BW116_Q2.cpp")
+add_code(BW116_Q3 "src/leetcode/biweekly/BW116/BW116_Q3.cpp")
+add_code(BW116_Q4 "src/leetcode/biweekly/BW116/BW116_Q4.cpp")
+
 # Swiggy
 add_code(SW_Q1 "src/swiggy/SW_Q1.cpp")
 add_code(SW_Q2 "src/swiggy/SW_Q2.cpp")

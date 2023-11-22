@@ -90,6 +90,10 @@ public:
 
   T getComponentSize(T _node) { return component_sizes_[find(_node)]; }
 
+  inline const auto &getComponentSizes() const { return component_sizes_; }
+
+  inline T minComponentSize() const { return *std::min_element(cbegin(component_sizes_), cend(component_sizes_)); }
+
   T size() const { return size_; }
 
   T getComponentCount() const { return component_count_; }
@@ -104,11 +108,11 @@ public:
     if (component_sizes_[root1] < component_sizes_[root2]) {
       component_sizes_[root2] += component_sizes_[root1];
       parents_[root1] = root2;
-      component_sizes_[root1] = 0;
+      component_sizes_[root1] = component_sizes_[root2];
     } else {
       component_sizes_[root1] += component_sizes_[root2];
       parents_[root2] = root1;
-      component_sizes_[root2] = 0;
+      component_sizes_[root2] = component_sizes_[root1];
     }
 
     --component_count_;

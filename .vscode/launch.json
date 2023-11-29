@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/AccountsMerge",
+      "program": "${workspaceFolder}/build/WaterFlow",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

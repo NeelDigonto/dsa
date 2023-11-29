@@ -93,14 +93,15 @@ public:
   inline const auto &getComponentSizes() const { return component_sizes_; }
 
   inline T minComponentSize() const { return *std::min_element(cbegin(component_sizes_), cend(component_sizes_)); }
+  inline T maxComponentSize() const { return *std::max_element(cbegin(component_sizes_), cend(component_sizes_)); }
 
   T size() const { return size_; }
 
   T getComponentCount() const { return component_count_; }
 
-  void connect(T _node1, T _node2) {
+  bool connect(T _node1, T _node2) {
     if (isConnected(_node1, _node2))
-      return;
+      return false;
 
     T root1 = find(_node1);
     T root2 = find(_node2);
@@ -116,5 +117,7 @@ public:
     }
 
     --component_count_;
+
+    return true;
   }
 };
